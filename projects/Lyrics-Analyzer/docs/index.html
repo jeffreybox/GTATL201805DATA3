@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<!-- JB: TO ADDRESS IN THE FUTURE
+------------------------------------------------------------
+- Making duplicate code more efficient
+- CSS modification of class to modify click and not-scroll-over
+-------------------------------------------------------------->
+
+<!--DEFINING THE HEADER TO CONTAIN BOOTSTRAP STYLING-->
+<head>
+    <meta charset="utf-8" />
+    <title>Lyrics Analyzer</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- My personal stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!--INDEX PAGE-->
+<body>
+    <!--NAVIGATION BAR TO BE USED ACROSS ALL PAGES-->
+    <nav class="navbar navbar-light" style="background-color:rgb(237, 104, 68)">
+            <div class="container">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"style="color:white">API Music Trends</a>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"style="color:white">Plots<span class="caret"></span></a>
+                            <ul class="dropdown-menu">    
+                                <li><a class="dropdown-item" href="viz1.html">Compound Scores</a></li>
+                                <li><a class="dropdown-item" href="viz2.html">Negative Scores</a></li>
+                                <li><a class="dropdown-item" href="viz3.html">Neutral Scores</a></li>
+                                <li><a class="dropdown-item" href="viz4.html">Positive Scores</a></li>
+                                <li><a class="dropdown-item" href="viz5.html">Normal Scores</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="comparisons.html" style="color:white">Comparison</a></li>
+                        <li><a href="data.html"style="color:white">Data</a></li>
+                        <li><a href="https://github.com/jeffreybox/Lyrics_Analyzer"style="color:white">Github</a></li>
+                        <li><a href="https://jeffreybox.github.io/"style="color:white">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <!--ROW 1: SUMMARY-->    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>50 Years of Music Trends</h1>
+                <hr></hr>
+                <a href = "https://www.musixmatch.com/"><img class="img-responsive shadow float_text_left" src = "https://github.com/jeffreybox/Lyrics_Analyzer/blob/master/Output/musixmatch.png?raw=true"></a>
+                <p>
+                    <ul>
+                        <li><strong>Question:</strong> It possible to “measure” music by conducting sentiment analysis on lyrics of popular songs through time?</li> 
+                        <li><strong>Claim:</strong> Pop music is a influential reflection of culture, and we have data... so... yes! </li>
+                        <li><strong>Null Hypothesis:</strong> The sentiments of popular song lyrics have not changed over time.</li>
+                        <li><strong>Alternative Hypothesis:</strong> The sentiments of popular song lyrics have changed over time (specifically negatively).</li>
+                        </ul><br/>
+                    This project uses standard Python libraries, regression tactics, and API calls to analyze music lyrics. 
+                    The database of songs was determined by utilizing Billboard charts over a period of 50 years (since Billboard's inception in 1968).
+                    Billboard's data was obtained using <a href="https://github.com/guoguo12/billboard-charts">Allen Guo's Python API</a>. 
+                    Next, minor data munging and API calls were needed to grab lyrics for analysis.
+                    <a href = "https://developer.musixmatch.com/documentation/api-reference/track-lyrics-get">MusixMatch</a> is a freemium service used to obtain song lyrics. 
+                    The project utilized <a href="https://github.com/hudsonbrendon/python-musixmatch">Hudson Brendon's Python Api</a> to pull the lyrics. 
+                    Finally, the lyrics were cleaned, flattened, and analyzed using <a href = "https://github.com/cjhutto/vaderSentiment">VaderSentiment</a>. 
+                    Keep in mind that this library is specifically tuned to analyze social media; however, testing proved its flexibility in application to music.
+                    The results were conclusive although not surprising: <strong>Lyrics in popular music are becoming more "negative" over time.</strong>
+                    See the results for each Vader sentiment in the "Plots" menu and a side-by-side in the "Comparison" menu. 
+                    The data from the final trial (Aug 14, 2018) is included (warning: explicit lyrical content) alongside the Github source link. The workflow is noted below.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--ROW 2: WORKFLOW-->  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Project Workflow</h4>
+                <hr></hr>
+                <div class ="imgbox">
+                    <img class = "center-fit" src = "https://github.com/jeffreybox/Lyrics_Analyzer/blob/master/Output/Workflow.png?raw=true">
+                </div><br/>
+            </div>
+        </div>
+    </div>
+    
+<!--FOOTER TO BE USED ACROSS ALL PAGES-->
+ <footer class="footer">
+        <!--FONT AWESOME REF-->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+            <!-- Footer Elements -->
+            <div class="container">
+                <br/>
+                    <div class="footer-copyright text-center py-3"><font color="white">2018: Jeffrey Box, ISYE, MBA, MHA, CPPS</font><br/><br/>
+                        <div class="mb-5 flex-center">
+                            <!-- Notes: fa-2x doubles the icon size, and 'fa-fw' adds  spacing after the icon-->
+                            <!-- Github -->
+                            <a class="gi-ic" href = "http://www.github.com/jeffreybox">
+                            <i class="fa fa-github fa-2x fa-fw" style="color:white"></i>
+                            </a>
+                            <!-- Twitter -->
+                            <a class="tw-ic" href = "http://www.twitter.com/jeffreybox">
+                            <i class="fa fa-twitter fa-2x fa-fw" style="color:white"> </i>
+                            </a>
+                            <!--Linkedin -->
+                            <a class="li-ic" href = "https://www.linkedin.com/in/jeffreybox">
+                            <i class="fa fa-linkedin fa-2x fa-fw" style="color:white"> </i>
+                            </a>
+                            <!--Instagram -->
+                            <a class="ins-ic" href = "https://www.instagram.com/jeffreybox">
+                            <i class="fa fa-instagram fa-2x fa-fw" style="color:white"> </i>
+                            </a>
+                        </div>
+                    <br/>
+                </div>
+            </div>
+    </footer>
+
+<!-- THE FOLLOWING IS REQUIRED FOR BOOTSTRAP INTERACTIVE COMPONENTS -EX- DROPDOWNS. RECOMMENDED BOTTOM PLACEMENT FOR FASTER LOAD TIME-->
+
+    <!-- jQuery Bootstrap's JavaScript plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>

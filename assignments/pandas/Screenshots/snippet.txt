@@ -1,0 +1,21 @@
+#pull three specific columns; this creates a unique list
+purchase_data_sub = pd.DataFrame(purchase_data.loc[:,["Item ID","Item Name","Price"]]).set_index('Item ID')
+
+#groupby two ids
+item_group = purchase_data_sub.groupby(["Item ID","Item Name"])
+
+#calculate some stuff
+item_count = pd.DataFrame(item_group.count()).rename(columns={"Price":"Purchase Count"})
+item_total = pd.DataFrame(item_group.sum()).rename(columns={"Price":"Total Purchase Value"})
+item_total["Total Purchase Value"] = item_total["Total Purchase Value"]
+
+#create the final data frame, sort, format, and order
+item_summary = (purchase_data_sub.merge(item_total.merge(item_count, on="Item ID"), on="Item ID")).drop_duplicates()
+item_summary.sort_values(by=['Purchase Count'])
+item_summary['Price'] = item_summary['Price'].astype(float).map("${:,.2f}".format)
+item_summary['Total Purchase Value'] = item_summary['Total Purchase Value'].astype(float).map("${:,.2f}".format)
+item_summary = item_summary.reset_index()
+item_summary = item_summary[['Item ID','Item Name','Purchase Count','Price','Total Purchase Value']]
+
+#display a preview of the final data frame
+item_summary.head()

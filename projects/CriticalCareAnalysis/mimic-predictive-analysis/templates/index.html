@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<!--DEFINING THE HEADER TO CONTAIN BOOTSTRAP STYLING-->
+<head>
+    <meta charset="utf-8">
+    <title>Mimic Analysis</title>
+    
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Personal stylesheets -->
+    <link rel="stylesheet" href="../static/css/IndexStyle.css">
+</head>
+
+<!--INDEX PAGE-->
+<body>
+
+    <!--NAVIGATION BAR TO BE USED ACROSS ALL PAGES-->
+    <nav class="navbar navbar-light">
+            <div class="container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"style="color:white">Home</a>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right"></li>
+                        <li><a href="https://mimic.physionet.org/" style="color:white">Data</a></li>
+                        <li><a href="/teampage"style="color:white">Team</a></li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero text-center">
+            <h1>Predicting Length of Stay</h1>
+            <p>Using the MIMIC Critical Care Database</p>
+            <a href="#explore" class="btn btn-circle js-scroll-trigger">
+                <i class="fa fa-angle-double-down animated"></i>
+            </a>
+        </div>
+
+    <!-- CONTAINER 1: PREMISE -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style = "text-align: center">Overview & Hypothesis</h1>
+                <hr>
+                <p style = "text-align: center"> The MIMIC-III (Medical Information Mart for Intensive Care) 
+                    Clinical Database contains comprehensive clinical data from 40,000+ 
+                    Intensive Care Unit (ICU) patients. This data is analyzed for predictive analysis 
+                    and machine learning purposes.
+                </p>
+                <p style = "text-align: center">
+                    <ul>
+                    <li>Can this model improve patient care and potentially save lives?</li>
+                    <li>Can we prioritize important clinical measures at the time of patient admission?</li>
+                    <li>Can we understand and optimize patient throughput?</li>
+                    </ul>
+                </p> 
+                <p style = "text-align: center"><em>MIMIC Database: Table Structure</em></p>
+                <a href="#"><img class="center" src = "https://github.com/luker0bert/CriticalCareAnalysis/blob/master/mimic-predictive-analysis/static/images/tables.png?raw=true"></a>
+                <hr>
+                <p style = "text-align: center">
+                    <ul>
+                    <li><strong>Ho:</strong> The first blood lab events are not good predictors for classifying likelihood of mortality and subsequent information. </li>
+                    <li><strong>Ha:</strong> We can classify patients as likely to die and predict their length of stay (LOS) or days to death (DTD) based on their first blood labs on admission. </li>
+                    </ul>
+                </p>    
+            </div>
+        </div>
+    </div>    
+
+    <!-- CONTAINER 2: STRATEGY -->
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style = "text-align: center">Strategy</h1>
+                    <hr>
+                    <p style = "text-align: center">
+                            We are trying to classify mortality probability given a set of features.
+                            From there, we are trying to predict LOS and TTD depending on the classification with the same set of features
+                            Therefore the strategy is: use a neural network and a multi-variate regression via a Supervised Learning (ML) model to classify and predict    
+                    </p>
+                    <p style = "text-align: center"> <em> This paradigm represents the project process
+                            </em></p> 
+                    <a href="#"><img class="center" src = "https://github.com/luker0bert/CriticalCareAnalysis/blob/master/mimic-predictive-analysis/static/images/paradigm.png?raw=true"></a>              
+                            
+                </div>
+            </div>
+        </div> 
+
+ <!-- CONTAINER 3: RESULTS -->
+ <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style = "text-align: center">Results</h1>
+                <hr>
+                <p style = "text-align: center">
+                    <ol>
+                        <li>73% accuracy in predicting likelihood of death during an ICU stay using a deep, sequential neural network</li>
+                        <li>44% accuracy in predicting the exact number of days a patient will spend in the ICU after admission using a Random Forest Model</li>
+                        <li>21% accuracy in predicting the exact number of days until a patient died after ICU admission using a Random Forest Model</li>
+                    </ol> 
+                </p>         
+            </div>
+        </div>
+    </div> 
+
+    <!--CONTAINER 3: RESOURCES-->  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style = "padding-top: 20px">
+                <h1 style = "text-align: center">The MIMIC Project</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row" style="background-color: white">
+            <div class="col-md-3">
+                    <a href = "https://mimic.physionet.org/">
+                        <img class="center" 
+                        src = "https://github.com/luker0bert/CriticalCareAnalysis/blob/master/mimic-predictive-analysis/static/images/mimic.png?raw=true"></a>
+            </div>
+            <div class="col-md-9">   
+                <p>
+                <strong>Collaborative research - </strong> MIMIC is an openly available dataset developed 
+                by the MIT Lab for Computational Physiology, comprising deidentified health data 
+                associated with ~40,000 critical care patients. It includes demographics, vital signs, 
+                laboratory tests, medications, and more. Citation - MIMIC-III, a freely accessible critical care database. 
+                Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, 
+                and Mark RG. Scientific Data (2016). DOI: 10.1038/sdata.2016.35. Available <a href="http://www.nature.com/articles/sdata201635">here</a>.</p>
+                </p>
+            </div>
+        </div>
+        <row>
+            <div class="col-md-12" style="background-color: transparent"></div>
+        </row>
+    </div>
+
+    
+<!--FOOTER TO BE USED ACROSS ALL PAGES-->
+<footer class="footer">
+    <!-- Footer Elements -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <div class="container">
+        <br/>
+        <div class="footer-copyright text-center py-3"><font color="white">© 2018 Copyright: Jeffrey Box, John Commander, John Giglio, Bill Magill, & Luke Williams</font><br/><br/>
+            <div class="mb-5 flex-center">
+                <!-- Github -->
+                <a class="ic" href = "https://github.com/luker0bert/CriticalCareAnalysis">
+                    <i class="fab fa-github fa-3x" style="color:white"></i></a>
+                <!-- 
+                <a class="ic" href = "https://bootcamp.pe.gatech.edu/data/lp1/?s=Google-Unbranded&dki=Data%20Science&utm_cost=0&trkid=V3ADW427502_53882828873_aud-489106722912:kwd-304086169812__253238998067_g_c__&mkwid=TCVWe2l0_dc&pkw=%2Bdata%20%2Bscientist%20%2Bsalary&pcrid=253238998067&pmt=b&utm_source=google&utm_medium=cpc&utm_campaign=%5BS%5D+Data+-+Data+Sciencet+-+&utm_term=%2Bdata%20%2Bscientist%20%2Bsalary&utm_content=253238998067&s=google&k=%2Bdata%20%2Bscientist%20%2Bsalary&gclid=CjwKCAjwo_HdBRBjEiwAiPPXpI5Hd_IC0S2YVkhnL3viYTKye8ogabLdtyRBCvIY-Nx1_kLWvOD9whoC8LsQAvD_BwE">
+                <i class="fa fa-certificate fa-2x fa-fw" style="color:white"> </i>
+                </a>GT --> 
+            </div>
+            <br/>
+        </div>
+    </div>
+</footer>
+<!-- THE FOLLOWING IS REQUIRED FOR BOOTSTRAP INTERACTIVE COMPONENTS -EX- DROPDOWNS. RECOMMENDED BOTTOM PLACEMENT FOR FASTER LOAD TIME-->
+
+    <!-- jQuery Bootstrap's JavaScript plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
