@@ -1,0 +1,130 @@
+
+<!-- THE MARS PYTHON SCRAPER WEBPAGE -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Scraper</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 align='center'>Sixty Seconds to Mars</h1>
+            <!-- This button calls the /scrape route -->
+            <p align='center'>This Flask app uses Python, Beautiful Soup, Splinter's chromedriver, and MongoDB to scrape various sites and return real-time data on Mars (shown below). Scraping takes about sixty seconds. Access my portfolio <a href="https://jeffreybox.github.io/"> here</a>. <br/>
+                <a class="btn btn-primary btn-lg" href="https://github.com/jeffreybox/web_scraping" role="button">Get Code!</a></p>
+        </div>
+    </div>
+    
+    <div class='container'>
+        <hr>
+        <h2>Latest News</h2>
+        <h4>Valles Marineris Hemisphere Enhanced</h4>
+        <p>A pair of NASA CubeSats flying to Mars are opening a new frontier for small spacecraft.</p>
+        <hr>
+        <div class='row'>
+            <div class = 'col-md-8'>
+                <img src= "https://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA18322_ip.jpg"style="width: 100%; height: 100%;">
+            </div>
+            <div class = 'col-md-4'>
+                <p style="border:3px; border-style:solid; border-color:rgb(90, 90, 90)">
+                    <strong>Weather Twitter</strong><br/>
+                    <i>@marswxreport</i><br/>
+                    Sol 2171 (2018-09-14), high -12C/10F, low -65C/-84F, pressure at 8.79 hPa, daylight 05:43-17:59<br/>
+                </p>
+                <br/>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Factoids</th>
+                        </tr>
+                        <tr>
+                            <th>Profile</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Equatorial Diameter:</td>
+                        <td>6,792 km</td>
+                    </tr>
+                    <tr>
+                        <td>Polar Diameter:</td>
+                        <td>6,752 km</td>
+                    </tr>
+                    <tr>
+                        <td>Mass:</td>
+                        <td>6.42 x 10^23 kg (10.7% Earth)</td>
+                    </tr>
+                    <tr>
+                        <td>Moons:</td>
+                        <td>2 (Phobos &amp; Deimos)</td>
+                    </tr>
+                    <tr>
+                        <td>Orbit Distance:</td>
+                        <td>227,943,824 km (1.52 AU)</td>
+                    </tr>
+                    <tr>
+                        <td>Orbit Period:</td>
+                        <td>687 days (1.9 years)</td>
+                    </tr>
+                    <tr>
+                        <td>Surface Temperature:</td>
+                        <td>-153 to 20 °C</td>
+                    </tr>
+                    <tr>
+                        <td>First Record:</td>
+                        <td>2nd millennium BC</td>
+                    </tr>
+                    <tr>
+                        <td>Recorded By:</td>
+                        <td>Egyptian astronomers</td>
+                    </tr>
+                    </tbody>    
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class='container'>
+        <h2 align="center">Hemispheres</h2>
+        <hr>
+        <div class='row'>
+            <div class = 'col-md-6'>
+                <img src= "https://astrogeology.usgs.gov//cache/images/cfa62af2557222a02478f1fcd781d445_cerberus_enhanced.tif_full.jpg"style="width: 100%; height: 100%;"><br/>
+                <h4 align='center'>Cerberus Hemisphere Enhanced</h4>
+            </div>
+            <div class = 'col-md-6'>
+                <img src= "https://astrogeology.usgs.gov//cache/images/3cdd1cbf5e0813bba925c9030d13b62e_schiaparelli_enhanced.tif_full.jpg"style="width: 100%; height: 100%;"><br/>
+                <h4 align='center'>Schiaparelli Hemisphere Enhanced</h4>
+        </div>
+        <div class='row'>
+            <div class = 'col-md-6'>
+                <img src= "https://astrogeology.usgs.gov//cache/images/ae209b4e408bb6c3e67b6af38168cf28_syrtis_major_enhanced.tif_full.jpg"style="width: 100%; height: 100%;"><br/>
+                <h4 align='center'>Syrtis Major Hemisphere Enhanced</h4>
+            </div>
+            <div class = 'col-md-6'>
+                <img src= "https://astrogeology.usgs.gov//cache/images/7cf2da4bf549ed01c17f206327be4db7_valles_marineris_enhanced.tif_full.jpg"style="width: 100%; height: 100%;"><br/>
+                <h4 align='center'>Valles Marineris Hemisphere Enhanced</h4>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+    <footer class="page-footer">
+        <br/>
+        <div class="footer-copyright text-center py-3"><strong>Resources</strong><br/>
+            <a href="https://mars.nasa.gov/news/"> Nasa Headlines</a><br/>
+            <a href="https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"> Nasa Featured Image</a><br/>
+            <a href="https://twitter.com/marswxreport?lang=en"> Twitter: @marswxreport</a><br/>
+            <a href="http://space-facts.com/mars/"> space-facts.com</a><br/>
+            <a href="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"> astrogeology.usgs.gov</a><br/>
+        </div>
+    </footer>
+</body>
+</html>
